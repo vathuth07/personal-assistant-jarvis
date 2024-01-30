@@ -4,6 +4,7 @@ import datetime
 import webbrowser
 import pywhatkit
 import wikipedia
+import pyjokes
 import pyautogui
 
 recognizer = sr.Recognizer()
@@ -50,6 +51,8 @@ def recognize_speech():
                 time = datetime.datetime.now().strftime("%I:%M %p")
                 print(time)
                 talk("its " + time + " now sir")
+            elif "joke" in command:
+                talk(pyjokes.get_joke())
             elif "open" in command:
                 pyautogui.press('super')
                 pyautogui.press('Cortana Search')
